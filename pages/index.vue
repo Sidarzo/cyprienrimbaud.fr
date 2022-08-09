@@ -1,8 +1,9 @@
 <template>
     <div class="container mx-auto">
-        <NavBar />
-        <About />
+            <About/> 
+
     </div>
+
 </template>
 
 <script>
