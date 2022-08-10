@@ -1,9 +1,11 @@
+
 <template>
-    <div class="container mx-auto">
-            <About/> 
+    <section class="">
+        <div class="container mx-auto">
+             <About/> 
 
-    </div>
-
+        </div>
+    </section>
 </template>
 
 <script>
