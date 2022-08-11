@@ -1,4 +1,5 @@
 <template>
+<div class="container mx-auto">
         <div class="grid mt-40">      
             <vue-typed-js :strings="['Rimbaud Cyprien']" :showCursor="false" :shuffle="true" :cursorChar="'_'" :typeSpeed="75" >
                 <p class="typing container mx-auto md:px-80 ml-12 mr-12 font-medium md:text-5xl font-sans md:font-serif"></p>
@@ -18,10 +19,11 @@
             </div>
             <div v-if="aboutDisplay">
                 <vue-typed-js :strings="[this.aboutTxt]" :showCursor="false" :cursorChar="'_'" :typeSpeed="5" >
-                    <p class="typing container mx-auto ml-12 mr-12 font-medium md:text-xl font-sans md:font-serif"></p>
+                    <p class="typing container mx-auto ml-12 mr-12 font-medium md:text-xl font-sans md:font-serif text-justify"></p>
                 </vue-typed-js>
             </div>
 
+        </div>
         </div>
         
 </template>

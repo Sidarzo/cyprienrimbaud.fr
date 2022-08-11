@@ -1,13 +1,12 @@
 
 <template>
-    <section class="">
-        <div class="container mx-auto">
-             <About/> 
-
+        <div>
+            <About/>
+            <Skills/>
+            <Projects/>
+            <Contacts/>
         </div>
-    </section>
 </template>
 
 <script>
-
 </script>
