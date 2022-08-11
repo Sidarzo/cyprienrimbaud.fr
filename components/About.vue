@@ -31,7 +31,7 @@
         data() {
             return {
                 aboutDisplay: false,
-                aboutTxt: "Passionné par le développement depuis le collège, j’en ai appris les bases en autodidacte puis j’ai continué jusqu’au lycée où j’ai pris une option numérique, afin d’en apprendre plus sur le développement et l’univers de l’informatique. Mon intégration vers un BTS SIO s’est donc inscrite dans la continuité de mon parcours. En fin d’année 2020, mes résultats m’ont permis de pouvoir intégrer l’option SLAM de ce BTS."
+                aboutTxt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel volutpat purus. Nunc quis eleifend lectus, et consectetur felis. Nulla congue libero mauris, et tempor libero feugiat finibus. Suspendisse posuere dignissim orci, id accumsan enim scelerisque ut. Aenean eu nulla non erat vehicula mattis. Suspendisse id odio vel mi aliquet imperdiet. Praesent nulla leo, egestas eu maximus nec, cursus tincidunt odio. Curabitur sit amet nisi varius, consectetur neque non, porta dolor. Fusce sed pulvinar nisi, rutrum posuere eros. Nullam semper leo nec felis imperdiet euismod. Nulla finibus ligula odio, sed semper tortor congue non. Nunc elementum auctor ipsum ut malesuada. Nam cursus, neque nec venenatis semper, mauris tortor feugiat felis, ac mattis nisl leo posuere metus. Etiam sit amet accumsan ex."
             }
         },
         methods: {
