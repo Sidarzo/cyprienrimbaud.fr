@@ -1,18 +1,20 @@
 <template>
 <div class="container mx-auto ">
         <div class="grid mt-40">      
-            <vue-typed-js :strings="['Rimbaud Cyprien']" :showCursor="false" :shuffle="true" :cursorChar="'_'" :typeSpeed="75" >
-                <p class="typing container mx-auto md:px-80 ml-8 mr-12 font-medium md:text-5xl text-2xl font-sans md:font-serif"></p>
+            <vue-typed-js :strings="['Rimbaud Cyprien']" :showCursor="false" :shuffle="true" :typeSpeed="75" >
+                <p class="typing md:px-80 ml-8 mr-12 font-medium md:text-5xl text-2xl font-sans md:font-serif"></p>
             </vue-typed-js>
-            <vue-typed-js :strings="['Apprenti développeur']" :showCursor="false" :cursorChar="'_'" :typeSpeed="75" >
-                <p class="typing container mx-auto md:px-80 ml-8 mr-12 font-medium md:text-4xl text-xl font-sans md:font-serif"></p>
+            <vue-typed-js :strings="['Apprenti développeur']" :showCursor="false" :typeSpeed="75" >
+                <p class="typing md:px-80 ml-8 mr-12 font-medium md:text-4xl text-xl font-sans md:font-serif"></p>
             </vue-typed-js>
-            <div class="grid place-content-center item-center mt-10 mb-10">
-                <button v-if="aboutDisplay" v-on:click="removeAbout">
-                    <svg class="animate-bounce w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            <div class="grid place-content-center mb-10 mt-10">
+                <button v-if="aboutDisplay" v-on:click="removeAbout" class="animate-bounce">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                    <p>Finalement je ne veux pas...</p>
                 </button>
-                <button v-else v-on:click="addAbout">
-                <svg class="animate-bounce w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                <button v-else v-on:click="addAbout" class="animate-bounce">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>  
+                <p class="text-center">Je veux en savoir plus...</p>
                 </button>
             </div>
             <transition name="aboutText">
