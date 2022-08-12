@@ -1,8 +1,8 @@
 <template>
-<div class="h-auto bg-gray-900">
+<div class="h-full bg-gray-900 shadow-lg shadow-indigo-500/50">
     <div class="container mx-auto">
-        <div class="grid grid-rows-3 grid-flow-col gap-4 text-white text-center md:text-justify">
-            <div class="md:row-span-3 mt-5">
+        <div class="grid grid-rows-2 grid-flow-col gap-4 text-white text-center md:text-justify">
+            <div class="md:row-span-2 mt-5 md:mb-20">
                 <h1 class="text-3xl font-medium">
                     Compétences & expériences
                 </h1>
@@ -12,10 +12,10 @@
                     Nulla non auctor quam. Donec tempus ac sapien eget auctor. Duis venenatis odio ac orci tincidunt, at elementum urna placerat. Vestibulum dictum efficitur tellus non convallis. Nunc consequat est eu quam ornare facilisis. Maecenas id diam vitae purus ultrices varius. Etiam placerat volutpat ante, bibendum cursus diam sollicitudin sagittis. Etiam tempor posuere nisi, in finibus eros accumsan vitae. Vestibulum elementum eros aliquam, ultrices mi at, rhoncus purus. Duis dictum nibh nec erat fermentum, at pretium tortor convallis. Curabitur viverra ligula eget lorem condimentum, sit amet bibendum justo consequat.
                 </p>
             </div>
-            <div class="col-span-2"> 
+            <div class="col-span-3 md:row-span-3 md:mt-20 mt-2"> 
                 <div>
                     <!-- Laravel -->
-                <p class="font-medium mb-1 mt-5">Laravel</p>
+                <p class="font-medium mb-1">Laravel</p>
                 <div class="col-span-2 rounded-full bg-gray-700 w-full">
                     <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 45%"></div>
                 </div>
@@ -44,10 +44,17 @@
                 <div class="col-span-2 rounded-full bg-gray-700 w-full">
                     <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 100%"></div>
                 </div>
+                    <!-- Vuejs -->
+                <p class="font-medium mb-1 mt-3">VueJs</p>
+                    <div class="col-span-2 rounded-full bg-gray-700 w-full">
+                    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 100%"></div>
+                </div>
+                    <!-- Nuxt -->
+                <p class="font-medium mb-1 mt-3">Nuxt</p>
+                    <div class="col-span-2 rounded-full bg-gray-700 w-full">
+                    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 100%"></div>
+                </div>
             </div>
-            </div>
-            <div class="md:row-span-1 col-span-2">
-                <p>Text</p>
             </div>
         </div>
     </div>
