@@ -1,5 +1,5 @@
 <template>
-<div class="container mx-auto">
+<div class="container mx-auto ">
         <div class="grid mt-40">      
             <vue-typed-js :strings="['Rimbaud Cyprien']" :showCursor="false" :shuffle="true" :cursorChar="'_'" :typeSpeed="75" >
                 <p class="typing container mx-auto md:px-80 ml-8 mr-12 font-medium md:text-5xl text-2xl font-sans md:font-serif"></p>
@@ -15,11 +15,11 @@
                 <svg class="animate-bounce w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                 </button>
             </div>
-            <div v-if="aboutDisplay">
-                <vue-typed-js :strings="[this.aboutTxt]" :showCursor="false" :cursorChar="'_'" :typeSpeed="5" >
-                    <p class="typing container mx-auto ml-12 mr-12 font-medium md:text-xl font-sans md:font-serif text-justify"></p>
-                </vue-typed-js>
-            </div>
+            <transition name="aboutText">
+                <div v-if="aboutDisplay">
+                    <p class="ml-12 mr-12 font-medium md:text-xl font-sans md:font-serif text-justify mb-5">{{this.aboutTxt}}</p>
+                </div>
+            </transition>
         </div>
     </div>
         
@@ -40,7 +40,13 @@
             removeAbout() {
                 this.aboutDisplay = false;
             }
-        }
+        },
+        transition: 'aboutText'
     }
 
 </script>
+
+<style>
+  .aboutText-enter-active, .aboutText-leave-active { transition: opacity 1.5s; }
+  .aboutText-enter, .aboutText-leave-active { opacity: 0; }
+</style>
