@@ -1,7 +1,7 @@
 <template>
 <div class="h-full bg-gray-900 shadow-lg shadow-indigo-500/50">
     <div class="container mx-auto py-12">
-        <div class="container mx-auto grid grid-rows-2 grid-flow-col gap-4 text-white text-center md:text-justify">
+        <div class="container mx-auto grid grid-rows-2 grid-flow-col text-white text-center md:text-justify">
             <div class="md:row-span-2 mt-5 md:mb-20">
                 <h1 class="text-3xl font-medium text-center md:text-left">
                     Compétences & expériences
