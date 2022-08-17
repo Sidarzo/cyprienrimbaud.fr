@@ -42,7 +42,7 @@
                     <!-- Python -->
                 <p class="font-medium mb-1 mt-3">Python</p>
                 <div class="col-span-2 rounded-full bg-gray-700 w-full">
-                    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 100%"></div>
+                    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full" style="width: 20%"></div>
                 </div>
                     <!-- Vuejs -->
                 <p class="font-medium mb-1 mt-3">VueJs</p>

@@ -1,10 +1,10 @@
 <template>
 <div class="container mx-auto ">
         <div class="grid mt-40">      
-            <vue-typed-js :strings="['Rimbaud Cyprien']" :showCursor="false" :shuffle="true" :typeSpeed="75" >
+            <vue-typed-js :strings="['Cyprien Rimbaud']" :showCursor="false" :shuffle="true" :typeSpeed="10" >
                 <p class="typing md:px-80 ml-8 mr-12 font-medium md:text-5xl text-2xl font-sans md:font-serif"></p>
             </vue-typed-js>
-            <vue-typed-js :strings="['Apprenti développeur']" :showCursor="false" :typeSpeed="75" >
+            <vue-typed-js :strings="['Développeur junior']" :showCursor="false" :typeSpeed="75" >
                 <p class="typing md:px-80 ml-8 mr-12 font-medium md:text-4xl text-xl font-sans md:font-serif"></p>
             </vue-typed-js>
             <div class="grid place-content-center mb-10 mt-10">
