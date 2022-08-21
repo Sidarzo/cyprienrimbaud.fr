@@ -1,10 +1,11 @@
 <template>
 <div class="container mx-auto ">
-
-        <div class="grid mt-40">    
+        <div class="container mx-auto">   
+             <div class="mb-12">
                 <p class="font-medium md:text-5xl text-2xl font-sans">Cyprien Rimbaud</p>
                 <p class="font-medium md:text-4xl text-xl font-sans">Développeur Junior</p>
-            <div class="grid place-content-center mb-10 mt-10">
+            </div>    
+            <div class="container">
                 <button v-if="aboutDisplay" v-on:click="removeAbout" class="animate-bounce">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                     <p>Finalement je ne veux pas...</p>
