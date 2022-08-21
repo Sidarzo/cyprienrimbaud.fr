@@ -2,7 +2,6 @@
   <div>
     <NavBar/>
     <Nuxt />
-    <transition>
       <div id="pagetop" class="fixed right-0 bottom-0" v-show="scY > 200" @click="toTop">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
            stroke="#4a5568"
@@ -10,7 +9,6 @@
         <path d="M18 15l-6-6-6 6"/>
       </svg>
     </div>
-  </transition>
   </div>
 
 </template>

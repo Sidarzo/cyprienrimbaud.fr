@@ -1,6 +1,7 @@
 <template>
 <div class="container mx-auto ">
-        <div class="grid mt-40">      
+
+        <div class="grid mt-40">    
                 <p class="font-medium md:text-5xl text-2xl font-sans">Cyprien Rimbaud</p>
                 <p class="font-medium md:text-4xl text-xl font-sans">Développeur Junior</p>
             <div class="grid place-content-center mb-10 mt-10">
@@ -47,4 +48,7 @@
 <style>
   .aboutText-enter-active, .aboutText-leave-active { transition: opacity 1.5s; }
   .aboutText-enter, .aboutText-leave-active { opacity: 0; }
+
+
+
 </style>
