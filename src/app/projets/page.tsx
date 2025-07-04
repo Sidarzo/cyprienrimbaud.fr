@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { Header, Footer } from "@/components/layout";
 import { ProjectCard } from "@/components/features";
-import { SITE_CONFIG } from "@/constants";
 
 export const metadata: Metadata = {
   title: 'Projets | Cyprien Rimbaud',
