@@ -1,4 +1,13 @@
+"use client"
+import { motion } from "framer-motion";
+
 export default function AboutSection() {
+    const events = [
+        { year: "2021", title: "BTS SIO", side: "left" },
+        { year: "2022", title: "Stage Dev Web", side: "right" },
+        { year: "2023", title: "Alternance Fullstack", side: "left" },
+        { year: "2024", title: "Master Développement", side: "right" },
+      ];
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -8,20 +17,68 @@ export default function AboutSection() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                Développeur passionné
-              </h3>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Je suis un développeur web full-stack avec une passion pour créer des applications 
-                web modernes et performantes. J'aime travailler avec les dernières technologies 
-                et résoudre des problèmes complexes.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Mon expertise couvre le développement frontend avec React et Next.js, 
-                ainsi que le développement backend avec Node.js et diverses bases de données.
-              </p>
-            </div>
+            <div className="relative w-full flex justify-center">
+             <svg
+                width="100"
+                height="450"
+                viewBox="0 0 100 400"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+            <defs>
+                <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#2563eb" />  {/* blue-600 */}
+                    <stop offset="100%" stopColor="#9333ea" /> {/* purple-600 */}
+                </linearGradient>
+            </defs>
+            <motion.path
+                d="
+                    M50 500
+                    Q 30 450, 50 400
+                    Q 70 350, 50 300
+                    Q 30 250, 50 200
+                    Q 70 150, 50 100
+                    Q 30 50, 50 0
+                "
+                stroke="url(#lineGradient)"
+                strokeWidth="5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 3, ease: "easeInOut" }}
+                />
+                {/* Points */}
+                {[100, 200, 300, 400, 500].map((y, i) => (
+                <motion.circle
+                initial={{x: -30 }}
+                animate={{x: 0 }}
+                transition={{ duration: 3 }}
+                    key={i}
+                    cx="50"
+                    cy={y}
+                    r="8"
+                    fill="#4f46e5"
+                    stroke="white"
+                    strokeWidth="2"
+                />
+                ))}
+            </svg>
+        <div className="absolute top-0 w-full h-full z-10">
+        {[150, 300, 450].map((y, i) => (
+          <div
+            key={i}
+            className={`absolute top-[${y}px] ${
+              events[i].side === "left"
+                ? "left-0 text-right pr-4"
+                : "right-0 text-left pl-4"
+            } w-1/2`}
+          >
+            <p className="font-bold text-indigo-600">{events[i].year}</p>
+            <p className="text-gray-700">{events[i].title}</p>
+          </div>
+        ))}
+      </div>
+        </div>
             
             <div className="bg-gray-100 rounded-lg p-8">
               <h4 className="text-xl font-semibold mb-4 text-gray-800">
