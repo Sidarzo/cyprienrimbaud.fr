@@ -1,5 +1,4 @@
 import { Header, Footer } from "@/components/layout";
-import { SITE_CONFIG } from "@/constants";
 import { 
   HeroSection, 
   AboutSection, 
@@ -12,8 +11,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto text-center">
+      <main className="flex-1 container mx-auto w-full">
+        <div className="mx-auto text-center">
 
           <HeroSection />
           <AboutSection />
