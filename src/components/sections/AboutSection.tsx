@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
     const events = [
-        { year: "2021", title: "BTS SIO", side: "left" },
-        { year: "2022", title: "Stage Dev Web", side: "right" },
-        { year: "2023", title: "Alternance Fullstack", side: "left" },
-        { year: "2024", title: "Master Développement", side: "right" },
+        { y:50, x: -325 ,year: "2023 - 2025", title: "Expert en informatique et Systèmes d'Information - EPSI"},
+        { y:150, x: -325 ,year: "2022 - 2023", title: "Concepteur développeur d'Applications - EPSI"},
+        { y:250, x: 70 ,year: "2022 - 2025", title: "Développeur alternant Groupe HUET"},
+        { y:350 , x: 70 ,year: "2022", title: "Stage développeur Yellow Network"},
+        { y:450 , x: 70 ,year: "2021", title: "Stage développeur Gustav by Cocktail"},
+        { y:550 , x: 70 ,year: "2024", title: "BTS Services Informatiques aux Organisations - Notre Dame du Roc"},
       ];
   return (
     <section id="about" className="py-20 bg-white">
@@ -17,18 +19,18 @@ export default function AboutSection() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full flex justify-center">
+            <div className="relative w-full flex justify-center col-span-1">
              <svg
-                width="100"
+                width="800"
                 height="450"
-                viewBox="0 0 100 400"
+                viewBox="0 0 100 500"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
             <defs>
                 <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stopColor="#2563eb" />  {/* blue-600 */}
-                    <stop offset="100%" stopColor="#9333ea" /> {/* purple-600 */}
+                    <stop offset="60%" stopColor="#9333ea" /> {/* purple-600 */}
                 </linearGradient>
             </defs>
             <motion.path
@@ -48,36 +50,33 @@ export default function AboutSection() {
                 transition={{ duration: 3, ease: "easeInOut" }}
                 />
                 {/* Points */}
-                {[100, 200, 300, 400, 500].map((y, i) => (
-                <motion.circle
-                initial={{x: -30 }}
-                animate={{x: 0 }}
-                transition={{ duration: 3 }}
-                    key={i}
+                {events.map((event, index) => (
+                <g key={index}>
+                    <motion.circle
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 3, ease: "easeInOut" }}
                     cx="50"
-                    cy={y}
+                    cy={event.y}
                     r="8"
                     fill="#4f46e5"
                     stroke="white"
                     strokeWidth="2"
-                />
+                    />
+
+                    <text
+                    x={event.x}
+                    y={event.y}     
+                    fontSize="13"
+                    fill="black"
+                    textAnchor="start"
+                    alignmentBaseline="middle"
+                    >
+                    {event.year} - {event.title}
+                    </text>
+                </g>
                 ))}
             </svg>
-        <div className="absolute top-0 w-full h-full z-10">
-        {[150, 300, 450].map((y, i) => (
-          <div
-            key={i}
-            className={`absolute top-[${y}px] ${
-              events[i].side === "left"
-                ? "left-0 text-right pr-4"
-                : "right-0 text-left pl-4"
-            } w-1/2`}
-          >
-            <p className="font-bold text-indigo-600">{events[i].year}</p>
-            <p className="text-gray-700">{events[i].title}</p>
-          </div>
-        ))}
-      </div>
         </div>
             
             <div className="bg-gray-100 rounded-lg p-8">
