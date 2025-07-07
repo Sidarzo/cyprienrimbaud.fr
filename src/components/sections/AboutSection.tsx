@@ -4,30 +4,30 @@ import { useRef } from "react";
 
 export default function AboutSection() {
     const events = [
-        { y:50, x: -325 ,year: "2023 - 2025", title: "Expert en informatique et Systèmes d'Information - EPSI"},
-        { y:150, x: -325 ,year: "2022 - 2023", title: "Concepteur développeur d'Applications - EPSI"},
-        { y:250, x: 70 ,year: "2022 - 2025", title: "Développeur alternant Groupe HUET"},
-        { y:350 , x: 70 ,year: "2022", title: "Stage développeur Yellow Network"},
-        { y:450 , x: 70 ,year: "2021", title: "Stage développeur Gustav by Cocktail"},
-        { y:550 , x: 70 ,year: "2024", title: "BTS Services Informatiques aux Organisations - Notre Dame du Roc"},
+        { y:50,x: 40, textX: -325 ,year: "2023 - 2025", title: "Expert en informatique et Systèmes d'Information - EPSI"},
+        { y:150,x: 60, textX: -325 ,year: "2022 - 2023", title: "Concepteur développeur d'Applications - EPSI"},
+        { y:250,x: 40, textX: 70 ,year: "2022 - 2025", title: "Développeur alternant Groupe HUET"},
+        { y:350 ,x: 60, textX: 70 ,year: "2022", title: "Stage développeur Yellow Network"},
+        { y:450 ,x: 40, textX: 70 ,year: "2021", title: "Stage développeur Gustav by Cocktail"},
+        { y:550 ,x: 60, textX: 70 ,year: "2024", title: "BTS Services Informatiques aux Organisations - Notre Dame du Roc"},
       ];
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             À propos de moi
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full flex justify-center col-span-1">
+            <div className="flex justify-center col-span-1 w-2/3">
              <svg
-                width="800"
-                height="450"
-                viewBox="0 0 100 500"
+                width="1000"
+                height="750"
+                viewBox="0 0 1 700"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -39,7 +39,8 @@ export default function AboutSection() {
             </defs>
             <motion.path
                 d="
-                    M50 500
+                    M50 600
+                    Q 70 550, 50 500
                     Q 30 450, 50 400
                     Q 70 350, 50 300
                     Q 30 250, 50 200
@@ -56,12 +57,14 @@ export default function AboutSection() {
                 />
                 {/* Points */}
                 {events.map((event, index) => (
-                <g key={index}>
-                    <motion.circle
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 3, ease: "easeInOut" }}
-                    cx="50"
+                <motion.g 
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ duration: 3, ease: "easeInOut" }}
+                >
+                    <circle
+                    cx={event.x}
                     cy={event.y}
                     r="8"
                     fill="#4f46e5"
@@ -70,21 +73,21 @@ export default function AboutSection() {
                     />
 
                     <text
-                    x={event.x}
+                    x={event.textX}
                     y={event.y}     
                     fontSize="13"
                     fill="black"
                     textAnchor="start"
                     alignmentBaseline="middle"
                     >
-                    {event.year} - {event.title}
+                    {event.year} {event.title}
                     </text>
-                </g>
+                </motion.g>
                 ))}
             </svg>
         </div>
             
-            <div className="bg-gray-100 rounded-lg p-8">
+            <div className="bg-gray-100 rounded-lg p-8 col-span-1">
               <h4 className="text-xl font-semibold mb-4 text-gray-800">
                 Mes compétences
               </h4>
