@@ -1,5 +1,6 @@
 "use client"
-import { motion } from "framer-motion";
+import { motion,useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function AboutSection() {
     const events = [
@@ -10,6 +11,9 @@ export default function AboutSection() {
         { y:450 , x: 70 ,year: "2021", title: "Stage développeur Gustav by Cocktail"},
         { y:550 , x: 70 ,year: "2024", title: "BTS Services Informatiques aux Organisations - Notre Dame du Roc"},
       ];
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -46,7 +50,8 @@ export default function AboutSection() {
                 strokeWidth="5"
                 fill="none"
                 initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
+                ref={ref}   
+                animate={isInView ? { pathLength: 1 } : {}}
                 transition={{ duration: 3, ease: "easeInOut" }}
                 />
                 {/* Points */}
