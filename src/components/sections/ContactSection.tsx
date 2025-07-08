@@ -14,8 +14,8 @@ export default function ContactSection() {
                 Parlons de votre projet
               </h3>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous. 
-                N'hésitez pas à me contacter pour toute question ou collaboration.
+                Vous avez un projet en tête ? Je serais ravi d&#39;en discuter avec vous. 
+                N&#39;hésitez pas à me contacter pour toute question ou collaboration.
               </p>
               
               <div className="space-y-4">

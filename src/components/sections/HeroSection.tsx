@@ -18,7 +18,7 @@ export default function HeroSection() {
 
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
         Je suis un développeur full-stack avec une passion pour créer des applications 
-                web modernes et performantes. J'aime travailler avec les dernières technologies 
+                web modernes et performantes. J&#39;aime travailler avec les dernières technologies 
                 et résoudre des problèmes complexes.        </p>
         <div className="flex gap-4 justify-center">
           <Link 
