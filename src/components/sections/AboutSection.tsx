@@ -1,6 +1,5 @@
 "use client"
 import { motion,useInView } from "framer-motion";
-import { Montserrat_Alternates } from "next/font/google";
 import { useRef, useState } from "react";
 
 export default function AboutSection() {
@@ -25,14 +24,8 @@ const skills = [
     { name: "Laravel", logo: "/logos/laravel.svg" },
 ];
 
-const [mouseY, setMouseY] = useState(0);
-const [svgHeight, setSvgHeight] = useState(700);
-
-const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const y = e.clientY - rect.top;
-    setMouseY(Math.max(0, Math.min(y, svgHeight)));
-  };
+const [mouseY] = useState(0);
+const [svgHeight] = useState(700); // hauteur du SVG
 
 const pathLength = mouseY / svgHeight;
 
