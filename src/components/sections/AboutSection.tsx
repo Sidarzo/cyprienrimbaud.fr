@@ -26,13 +26,14 @@ const skills = [
 ];
 
 const [mouseY, setMouseY] = useState(0);
-const [svgHeight, setSvgHeight] = useState(700); // hauteur du SVG
+const [svgHeight, setSvgHeight] = useState(700);
 
 const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const y = e.clientY - rect.top;
     setMouseY(Math.max(0, Math.min(y, svgHeight)));
   };
+
 const pathLength = mouseY / svgHeight;
 
 
@@ -51,7 +52,7 @@ return (
         </h2>
         
         <div className="flex justify-center w-full">
-            <svg
+        <svg
             width="100%"
             height="750"
             viewBox="0 0 1 700"
@@ -117,6 +118,27 @@ return (
                 </text>
             </motion.g>
             ))}
+
+            {/* <motion.path
+            d="
+                M-10 600
+                Q 10 550, -10 500
+                Q -30 450, -10 400
+                Q 10 350, -10 300
+                Q -30 250, -10 200
+                Q 10 150, -10 100
+                Q -30 50, -10 0
+            "
+            stroke="red"
+            strokeWidth="3"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            ref={ref}   
+            animate={isInView ? { pathLength: 1 } : {}}
+            transition={{ duration: 3, ease: "easeInOut" }}
+            whileHover={{ pathLength: pathLength }}
+            className="cursor-pointer"
+            /> */}
         </svg>
     </div>
 
