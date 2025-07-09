@@ -13,9 +13,15 @@ const events = [
     ];
 
 const skills = [
-    { name: "React / Next.js", logo: "/logos/react-logo.png" },
-    { name: "TypeScript", logo: "/logos/typescript-logo.png" },
-    { name: "Node.js", logo: "/logos/nodejs-logo.png" },
+    { name: "React / Next.js", logo: "/logos/react.svg" },
+    { name: "C#", logo: "/logos/csharp.svg" },
+    { name: "Flutter", logo: "/logos/flutter.svg" },
+    { name: "Docker", logo: "/logos/docker.svg" },
+    { name: "GitLab", logo: "/logos/gitlab.svg" },
+    { name: "VueJs", logo: "/logos/vuejs.svg" },
+
+
+
 ];
 
 const ref = useRef(null);
@@ -100,20 +106,20 @@ return (
         Mes compétences
     </h2>
     <div className="bg-gray-100 rounded-lg p-8 col-span-1 w-full">
-            <h4 className="text-xl font-semibold mb-4 text-gray-800">
-            Mes compétences
-            </h4>
-            <div className="space-y-3" ref={refSkills}>
+            <div className="space-y-3 grid grid-cols-3 p-10 items-center justify-center space-x-10" ref={refSkills}>
             {skills.map((skill, index) => (
-            <div key={index}>
-                   <img
-                    src={skill.logo}
-                    alt="Logo"
-                    className="h-12 w-auto mb-6 mx-auto"
-                    />
-            </div>
-            
-            ))}
+                <motion.div className="flex flex-col items-center justify-center" key={index}
+                initial={{ opacity: 0 }}
+                animate={isInViewSkills ? { opacity: 1 } : {}}
+                transition={{ duration: index * 0.8, ease: "easeInOut" }}
+                >
+                    <img
+                        src={skill.logo}
+                        alt={"Logo_ " + skill.name}
+                        className="h-24 w-auto mb-6 mx-auto"
+                        />
+                </motion.div>
+                ))}
         </div>
         </div>
     </div>

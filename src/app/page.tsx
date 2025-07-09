@@ -9,19 +9,15 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      
-      <main className="flex-1 container mx-auto w-full">
-        <div className="mx-auto text-center">
-
+      <Header />   
+      <main className="flew container mx-auto w-full">
+        <div className="text-center mx-auto w-full">
           <HeroSection />
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-    
         </div>
-      </main>
-      
+      </main> 
       <Footer />
     </div>
   );

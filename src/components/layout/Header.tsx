@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <nav className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ecedee] px-10 py-3">
+    <nav className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ecedee] px-10 py-3 w-full">
       <div className="font-bold text-lg">
         <Link href="/">Cyprien Rimbaud</Link>
       </div>
