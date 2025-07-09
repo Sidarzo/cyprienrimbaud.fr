@@ -1,15 +1,16 @@
 "use client"
 import { motion,useInView } from "framer-motion";
-import { useRef } from "react";
+import { Montserrat_Alternates } from "next/font/google";
+import { useRef, useState } from "react";
 
 export default function AboutSection() {
 const events = [
-    { y:50,x: -10, textX: -190 ,year: "2023 - 2025", title: "EISI - EPSI"},
-    { y:150,x: 10, textX: -175 ,year: "2022 - 2023", title: "CDA - EPSI"},
-    { y:250,x: -10, textX: 10 ,year: "2022 - 2025", title: "Développeur alternant Groupe HUET"},
-    { y:350 ,x: 10, textX: 20 ,year: "2022", title: "Stage développeur Yellow Network"},
-    { y:450 ,x: -10, textX: 10 ,year: "2021", title: "Stage développeur Gustav by Cocktail"},
-    { y:550 ,x: 10, textX: -295 ,year: "2020 - 2022", title: "BTS SIO - Notre Dame du Roc"},
+    { y:50,x: -10, textX: -190 ,year: "2023 - 2025", title: "EISI - EPSI", link: "https://www.epsi.fr/ecole/europeenne-d-ingenierie-de-systemes-informatiques-eisi/"},
+    { y:150,x: 10, textX: -175 ,year: "2022 - 2023", title: "CDA - EPSI", link: "https://www.epsi.fr/ecole/conception-et-developpement-d-applications-cda/"},
+    { y:250,x: -10, textX: 10 ,year: "2022 - 2025", title: "Développeur alternant Groupe HUET", link: "https://www.huet.fr/"},
+    { y:350 ,x: 10, textX: 20 ,year: "2022", title: "Stage développeur Yellow Network", link: "https://www.yellownetwork.fr/"},
+    { y:450 ,x: -10, textX: 10 ,year: "2021", title: "Stage développeur Gustav by Cocktail", link: "https://www.gustav.fr/"},
+    { y:550 ,x: 10, textX: -295 ,year: "2020 - 2022", title: "BTS SIO - Notre Dame du Roc", link: "https://www.notredameduroc.fr/"},
     ];
 
 const skills = [
@@ -19,10 +20,21 @@ const skills = [
     { name: "Docker", logo: "/logos/docker.svg" },
     { name: "GitLab", logo: "/logos/gitlab.svg" },
     { name: "VueJs", logo: "/logos/vuejs.svg" },
-
-
-
+    { name: "SQL", logo: "/logos/sql.svg" },
+    { name: "PHP", logo: "/logos/php.svg" },
+    { name: "Laravel", logo: "/logos/laravel.svg" },
 ];
+
+const [mouseY, setMouseY] = useState(0);
+const [svgHeight, setSvgHeight] = useState(700); // hauteur du SVG
+
+const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const y = e.clientY - rect.top;
+    setMouseY(Math.max(0, Math.min(y, svgHeight)));
+  };
+const pathLength = mouseY / svgHeight;
+
 
 const ref = useRef(null);
 const refSkills = useRef(null);
@@ -63,12 +75,14 @@ return (
                 Q -20 50, 0 0
             "
             stroke="url(#lineGradient)"
-            strokeWidth="5"
+            strokeWidth="7"
             fill="none"
             initial={{ pathLength: 0 }}
             ref={ref}   
             animate={isInView ? { pathLength: 1 } : {}}
             transition={{ duration: 3, ease: "easeInOut" }}
+            whileHover={{ pathLength: pathLength }}
+            className="cursor-pointer"
             />
             {/* Points */}
             {events.map((event, index) => (
@@ -85,6 +99,10 @@ return (
                 fill="#4f46e5"
                 stroke="white"
                 strokeWidth="2"
+                className="cursor-pointer hover:fill-blue-600 transition-all duration-300"
+                onClick={() => {
+                    window.open(event.link, "_blank");
+                }}
                 />
 
                 <text
