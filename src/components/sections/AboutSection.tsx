@@ -13,9 +13,9 @@ const events = [
     ];
 
 const skills = [
-    { name: "React / Next.js", percentage: 95 },
-    { name: "TypeScript", percentage: 90 },
-    { name: "Node.js", percentage: 85 },
+    { name: "React / Next.js", logo: "/logos/react-logo.png" },
+    { name: "TypeScript", logo: "/logos/typescript-logo.png" },
+    { name: "Node.js", logo: "/logos/nodejs-logo.png" },
 ];
 
 const ref = useRef(null);
@@ -106,17 +106,11 @@ return (
             <div className="space-y-3" ref={refSkills}>
             {skills.map((skill, index) => (
             <div key={index}>
-                    <div className="flex justify-between">
-                <span>{skill.name}</span>
-                <span className="text-blue-600 font-semibold">{skill.percentage}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-                <motion.div className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full" style={{width: `${skill.percentage}%`}}
-                initial={{ width: 0 }}
-                animate={ isInViewSkills ? { width: `${skill.percentage}%` } : { width: 0 }}
-                transition={{ duration: 3, ease: "easeInOut" }}
-                ></motion.div>
-            </div>
+                   <img
+                    src={skill.logo}
+                    alt="Logo"
+                    className="h-12 w-auto mb-6 mx-auto"
+                    />
             </div>
             
             ))}
